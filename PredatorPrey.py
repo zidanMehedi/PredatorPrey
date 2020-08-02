@@ -4,8 +4,8 @@ import math
 import os
 from PIL import Image
 
-sample = 'Sample5'
-os.chdir('E:\PredatorPray\S5Plot')
+
+sample = 'Sample1'
 
 myJSONS = [file for file in os.listdir('E:\\PredatorPray\\'+sample+'\\JSON_Files')]
 myImages = [img for img in os.listdir('E:\\PredatorPray\\'+sample+'\\Frames')]
@@ -56,9 +56,10 @@ for img,file in zip(myImages,myJSONS):
     cv2.imwrite(img,image)
 
 
+folder = 'E:\PredatorPray\S1Plot'
+name = 'newvideo.mp4'
+
 def video_gen():
-    folder = 'E:\PredatorPray\S5Plot'
-    name = 'newvideo.mp4'
     images = [img for img in os.listdir(folder)]
     frame = cv2.imread(os.path.join(folder,images[0]))
     height,width,layers = frame.shape
@@ -70,3 +71,18 @@ def video_gen():
     video.release()
 
 video_gen()
+
+
+
+def playVideo():
+    cap = cv2.VideoCapture(os.path.join(folder,name))
+    while cap.isOpened():
+        ret, frame = cap.read()
+        cv2.imshow('Frame',frame)
+        if (cv2.waitKey(150) & 0xFF==ord('q')):
+            break
+
+    cap.release()
+    cv2.destroyAllWindows()
+
+playVideo()
