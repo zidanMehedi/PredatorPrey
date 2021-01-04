@@ -7,9 +7,10 @@ pdr_points = []     #empty list for predator co-ordinations
 
 pr_points = []      #empty list for prey co-ordinations
 
-sample = 'Sample1'
+sample = 'Sample5'			##folder name where the files is stored
+path = '..\\'+sample+'\\JSON_Files'			##the path of files
 
-myJSONS = [file for file in os.listdir('E:\\PredatorPrey\\'+sample+'\\JSON_Files')]     #taking JSON files in a list of a particular sample
+myJSONS = [file for file in os.listdir(path)]     #taking JSON files in a list of a particular sample
 
 
 
@@ -17,7 +18,7 @@ myJSONS = [file for file in os.listdir('E:\\PredatorPrey\\'+sample+'\\JSON_Files
 ##fetching co-ordintations of predator and prey to their corresponding lists
 
 for file in myJSONS:
-    myJSON = json.loads(open(os.path.join('E:\\PredatorPrey\\'+sample+'\\JSON_Files', file),'r').read())     #reading JSON files of a particular sample
+    myJSON = json.loads(open(os.path.join(path, file),'r').read())     #reading JSON files of a particular sample
     
     predator=[(myJSON['shapes'][0]['points'][0][0]+myJSON['shapes'][0]['points'][1][0])/2,
                 (myJSON['shapes'][0]['points'][0][1]+myJSON['shapes'][0]['points'][1][1])/2]        #fetching predator co-ordinations and finding the center point

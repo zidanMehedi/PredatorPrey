@@ -30,9 +30,6 @@ velocities_pdr = fn.velocity(distances_pdr, time)
 velocities_pr = fn.velocity(distances_pr, time)
 distance_between_object = fn.distance_between_objects(pdr_x,pdr_y,pr_x,pr_y)
 
-##poly = np.polyfit(T,velocities_pdr,43)
-##poly_eqn = np.poly1d(poly)
-##print(np.polyval(poly,[0.3333333333333333,0.6666666666666666, 1.0]))
 
 T = [(i+1)/timeSpliter for i in range(len(velocities_pdr))]
 #print(T)
@@ -103,31 +100,6 @@ print('Maximum Distance : {0}'.format(max(without_nans_distance)))
 print()
 print('Prey Speed List : {0}' .format(without_nans_distance))
 print()
-##plt.figure(1)
-#plt.plot(newT_pdrT,without_nans_pdr, marker='o', label = 'Predator Speed')
-#plt.plot(newT_prT,without_nans_pr,marker='o', label = 'Prey Speed')
-#plt.plot(T,velocities_pdr, marker='o', label = 'Predator Speed')
-##plt.plot(T,velocities_pr,marker='o', label = 'Prey Speed')
-#plt.xlabel('time(t)')
-#plt.ylabel('velocity(v)')
-#plt.legend()
-##
-##plt.figure(2)
-###plt.plot(newT_pdrT,without_nans_distance,marker='o', label = 'Distances Between Predator & Prey')
-##plt.bar(newT_pdrT,without_nans_distance, label = 'Distances Between Predator & Prey', width = 0.07)
-###plt.bar(T,distance_between_object, label = 'Distances Between Predator & Prey', width = 0.2)
-###plt.bar(newT_pdr,f_distance(newT_pdr), label = 'Distances Between Predator & Prey', width = 0.08)
-##plt.xlabel('time(t)')
-##plt.ylabel('Distance(d)')
-##plt.legend()
-##
-
-
-
-##print(list(without_nans_pdr))
-##print(list(without_nans_pr))
-##print(list(newT_pdrT))
-
 
 fig, ax1 = plt.subplots()
 ax2 = ax1.twinx()
