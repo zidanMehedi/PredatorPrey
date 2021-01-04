@@ -7,7 +7,7 @@ pdr_points = []     #empty list for predator co-ordinations
 
 pr_points = []      #empty list for prey co-ordinations
 
-sample = 'Sample5'
+sample = 'Sample1'
 
 myJSONS = [file for file in os.listdir('E:\\PredatorPrey\\'+sample+'\\JSON_Files')]     #taking JSON files in a list of a particular sample
 
