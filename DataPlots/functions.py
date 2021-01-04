@@ -34,3 +34,14 @@ def acceleartion(lst):
         acceleration.append(A)
         prev_velocity = post_velocity[i]
     return acceleration
+
+def mean(my_set):
+    Mean = math.fsum(my_set)/len(my_set)
+    return Mean
+
+def standard_daviation(my_list, mean):
+    new_set = []
+    for i in range(len(my_list)):
+        new_set.append(abs(mean-my_list[i])**2)
+        sd = math.sqrt(math.fsum(new_set)/len(my_list))
+    return sd
